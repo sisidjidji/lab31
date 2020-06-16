@@ -9,16 +9,21 @@ function Header() {
   );
 }
 
-
-class Main extends React.Component{
+function Footer(){
+ return(<div>
+    &copy; DeltaV 2020 
+  </div>)
+}
+class App extends React.Component{
   render(){
     return(
       <div class="wrapper">
         <Header/>
+        <Footer/>
       </div>
     )
   }
 
 }
 
-export default Main;
+export default App;
