@@ -16,40 +16,35 @@ function Footer(){
   </div>)
 }
 
-function Counter(){
-  return (
-<div>
-  
-  <button onClick={this.HandlerCountUp} >+</button>
-  <button onClick={this.HandlerCountDown}>-</button>
-</div>
-  )
-}
+
 
 class Main extends React.Component{
   constructor(prop){
     super(prop);
     this.state={
- count:""
+    count:0
     };
   }
 
   HandlerCountUp= e=>{
     e.preventDefault();
-    let count= e.target.onClick
-    count= count+1;
-    this.setState({count})  
+    let count = this.state.count+1;
+    this.setState({count})  ;
 }
 HandlerCountDown= e=>{
-  e.preventDefault();
-  let count= e.target.onClick
-  count= count-1;
+  let count=this.state.count -1 
+      
   this.setState({count})  
 }
-
-  render(
-  
-  )
+render(){
+return (
+  <div>
+    <h2>count : {this.state.count}</h2>
+    <button onClick={this.HandlerCountUp} > + </button>
+    <button onClick={this.HandlerCountDown}> - </button>
+  </div>
+    )
+}
 }
 class App extends React.Component{
   
@@ -58,7 +53,7 @@ class App extends React.Component{
       <div className="wrapper">
         <Header/>
         <Main/>
-        <Counter/>
+       
         <Footer/>
       </div>
     )
