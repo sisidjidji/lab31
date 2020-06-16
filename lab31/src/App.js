@@ -20,8 +20,8 @@ function Counter(){
   return (
 <div>
   
-  <button onClick={this.HandlerCount} >+</button>
-  <button>-</button>
+  <button onClick={this.HandlerCountUp} >+</button>
+  <button onClick={this.HandlerCountDown}>-</button>
 </div>
   )
 }
@@ -30,13 +30,20 @@ class Main extends React.Component{
   constructor(prop){
     super(prop);
     this.state={
-words: count
+ count:""
     };
   }
 
-  HandlerCount= e=>{
+  HandlerCountUp= e=>{
     e.preventDefault();
-    let count= e.target.value
+    let count= e.target.onClick
+    count= count+1;
+    this.setState({count})  
+}
+HandlerCountDown= e=>{
+  e.preventDefault();
+  let count= e.target.onClick
+  count= count-1;
   this.setState({count})  
 }
 
